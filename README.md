@@ -1,16 +1,5 @@
-# pharmacy_store
+# Smart Pharma Manager
+## Abstract
+Post pandemic we understand that medical shops/ Pharmacies are a breeding place for most of the infections as a lot of infected people try to purchase their medicines. Thereby the main objective of this project is to build a virtual pharmacy where in instead of giving the prescription to the pharmacist the customer just has to click a picture of the prescription and the main objective of the platform is to make it user friendly thereby to attract maximum number of users.
 
-A new Flutter project.
-
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Several different handwriting recognition techniques have been proposed for English language. Papers on handwriting recognition techniques have suggested many implementations such as diagonal based feature extraction, neural network based character recognition, image to sequence extraction, genetic algorithms, neural end to end models and further their architecture and efficiency have been evaluated and discussed. We de- velop an app that reads prescription images and interprets the medicine name from the handwritten prescription.

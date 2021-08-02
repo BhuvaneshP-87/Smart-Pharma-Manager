@@ -6,11 +6,11 @@ class User{
   DateTime _createdAt,_lastOpenedAt,_lastSignInAt;
   String _age;
   int _gender;
-  List _categories,_favourite;
+  List _categories,_cartItems;
 
   User({List categories,List favourite,String age,int gender,String detail,String name,String address,double latitude, double longitude, String referral,
     DateTime createdAt,DateTime lastOpenedAt,DateTime lastSignInAt}){
-    this._favourite=favourite;
+    this._cartItems=favourite;
     this._name=name;
     this._age=age;
     this._gender=gender;
@@ -30,7 +30,7 @@ class User{
     _createdAt=json['createdAt'].toDate();
     _lastOpenedAt=json['lastOpenedAt'].toDate();
     _lastSignInAt=json['lastSignInAt'].toDate();
-    _favourite=json['favourite']==null?[].toList():json['favourite'].toList();
+    _cartItems=json['favourite']==null?[].toList():json['favourite'].toList();
   }
 
   Map<String, dynamic> toJson() =>
@@ -43,7 +43,7 @@ class User{
         'createdAt': _createdAt,
         'lastOpenedAt': _lastOpenedAt,
         'lastSignInAt': _lastSignInAt,
-        'favourite':_favourite==null?[]:_favourite,
+        'favourite':_cartItems==null?[]:_cartItems,
       };
 
   get detail => _detail;
@@ -103,9 +103,9 @@ class User{
     _gender = value;
   }
 
-  List get favourite => _favourite;
+  List get cartItems => _cartItems;
 
-  set favourite(List value) {
-    _favourite = value;
+  set cartItems(List value) {
+    _cartItems = value;
   }
 }

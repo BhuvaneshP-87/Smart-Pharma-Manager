@@ -2,7 +2,7 @@ import 'dart:io';
 
 import 'package:pharmacy_store/UI/main_screens/drawer.dart';
 import 'package:pharmacy_store/UI/main_screens/home_page.dart';
-import 'package:pharmacy_store/UI/main_screens/personal_library.dart';
+import 'package:pharmacy_store/UI/main_screens/cart_screen.dart';
 import 'package:pharmacy_store/UI/main_screens/vision.dart';
 import 'package:pharmacy_store/constants.dart';
 import 'package:flutter/material.dart';
@@ -18,7 +18,7 @@ class _LandingPageState extends State<LandingPage> with SingleTickerProviderStat
   List<Widget> _widgetOptions = <Widget>[
     Vision(),
     HomePage(),
-    PersonalLibrary(),
+    CartScreen(),
   ];
 
   TabController _tabController;

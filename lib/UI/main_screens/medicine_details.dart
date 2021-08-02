@@ -110,7 +110,7 @@ class _BookDetailsState extends State<BookDetails> {
                     color: blue,
                     title: "Add to cart",
                     onPressed: ()async{
-                      user.favourite.add(temp.provider_id);
+                      user.cartItems.add(temp.provider_id);
                       Fluttertoast.showToast(
                           msg: "Added to cart",
                           toastLength: Toast.LENGTH_SHORT,

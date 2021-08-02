@@ -20,7 +20,7 @@ class _VisionState extends State<Vision> {
   List<ImageLabel> _imageLabels = [];
   List<Barcode> _barCode = [];
   List result = [];
-  double threshold=0.6;
+  double threshold=0.6,slider_value=50;
   void _pickedImage(File image) {
     _userImageFile = image;
   }
@@ -49,20 +49,37 @@ class _VisionState extends State<Vision> {
           child: Center(
             child: Column(
               children: [
+              Slider(
+              value: slider_value,
+              min: 0,
+              max: 100,
+              divisions: 20,
+              label: slider_value.round().toString(),
+              onChanged: (double value) {
+                setState(() {
+                  slider_value=value;
+                  threshold= (value/100);
+                });
+                print(threshold);
+              },
+            ),
                 RoundedButton(color: blue,title: "Analyse",onPressed: (){
                   recogniseText();
                 }),
                 RoundedButton(color: blue,title: "Add to Cart",onPressed: (){
                   recogniseText();
                   for(Medicine i in medicines){
+                    String name=i.name.toLowerCase();
                     for(String j in result){
+                      j=j.toLowerCase();
                       int count=0;
                       for(int k=0;k<j.length;k++){
-                        if(i.name.contains(j[k]))
+                        if(name.contains(j[k]))
                           count++;
+                          name.replaceFirst(j[k],"");
                       }
                       if((count/i.name.length)>threshold){
-                        user.favourite.add(i.provider_id);
+                        user.cartItems.add(i.provider_id);
                         break;
                       }
                     }

@@ -9,6 +9,7 @@ class MedicineCards extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    
     return MaterialButton(
       onPressed: (){
         Navigator.push(context, MaterialPageRoute(builder: (context)=>BookDetails(medicine: details)));
@@ -18,11 +19,10 @@ class MedicineCards extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           ClipRRect(
-            borderRadius: BorderRadius.circular(20.0),
               child: Align(
-                widthFactor: 1,
+                widthFactor: 0.5,
                   heightFactor: 0.5,
-                  child: Image.network(details.url,height: 180,width: 140,))),
+                  child: Image.network(details.url,height: 120,width: 120,))),
           Text(" ${details.name}",style: GoogleFonts.lato(
               textStyle: Theme.of(context).textTheme.display2,
               color: Colors.black87,
